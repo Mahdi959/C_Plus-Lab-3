@@ -8,7 +8,7 @@
 using namespace std;
 
 //function prototype goes here
-
+int *addSize (int arrPtr[],int &size);
 
 
 int main()
@@ -27,18 +27,38 @@ int main()
 
 	//ADD VALUES TO THE ARRAY TO FILL IN THE EXTRA SPACE CREATED
 
-
-
-
+	for (int i = currentSize; i < SIZE; i++)   //putting values in the array
+			arrPtr[i] = i;
 
 
 	cout << "The new array is: ";
 	// This just displays the array
-	for (int i = 0; i < SIZE; i++)
-		cout << arrPtr[i]<<' ';
-
+	for (int i = 0; i < SIZE; i++){
+		cout<<arrPtr[i];
+		
+	}
+		
+		
+		
 	return 0;
 }
 
 //function definition goes here
- 
+ int *addSize (int arrPtr[],int &size){
+ 	int *Size;
+ 	Size= &size;
+ 	
+ 		
+ 	int *NewArr = new int[size*2];
+ 	
+     
+     for (int i = 0; i < size; i++) //putting values in the array
+			NewArr[i] = arrPtr[i]; 
+     	
+  
+   size = size*2;
+   *Size = size ;
+  
+    return NewArr;
+    
+ }
